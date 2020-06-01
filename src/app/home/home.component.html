@@ -1,0 +1,14 @@
+<div class="container">
+  <p class="center" style="color: darkblue"><b>Welcome to NoteApp!</b></p>
+  <p style="text-align: center; font-size: 20px; color: darkblue">where you can note to do list</p>
+  <br><br><br><br><br><br>
+  <label role="button"
+         style="font-size: 30px; margin-left: 180px">Your 5 notes recently created
+  </label>
+  <br><br>
+  <app-top5add
+    *ngFor="let ele of loadNoteTop5"
+    [element]="ele['value']['note']"
+    [index]="ele['key']">
+  </app-top5add>
+</div>

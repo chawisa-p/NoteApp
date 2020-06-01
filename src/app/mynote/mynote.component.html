@@ -1,0 +1,17 @@
+<div class="container">
+  <label role="button"
+         style="font-size: 30px; margin-left: 180px">My Note
+    <span class="tab"></span></label>
+  <br><br>
+
+  <app-mynote-list
+    *ngFor="let note of AllNote; let i=index"
+    [element]="note['note']"
+    [index]="i">
+  </app-mynote-list>
+
+  <app-add-mynote
+    [dataAllNote]="AllNote"
+    (addNote)="OnAdd($event)"></app-add-mynote>
+
+</div>

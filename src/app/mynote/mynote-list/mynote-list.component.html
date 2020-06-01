@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <input type="checkbox"
+               [(ngModel)]="isclick"
+               (change)="onChange()">
+      </div>
+      <div class="col-md-6">
+        <label>
+          {{index+1}}.
+          <span class="tab">{{element}}</span>
+        </label>
+      </div>
+      <div class="col-md-3">
+        <label
+           [ngStyle]="{color: isclick === true? 'green':'black'}">{{ toDoText }}</label>
+      </div>
+    </div>
+</div>

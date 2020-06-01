@@ -1,0 +1,21 @@
+<div class="container">
+  <hr>
+  <label style="font-size: 30px; margin-left: 170px">Add New Note</label>
+  <input type="text"
+         class="form-control"
+         style="margin-left: auto;margin-right: auto;height:200px;width:800px; font-size:20px; padding-bottom: 150px"
+         [(ngModel)]="noteText">
+  <br>
+  <div style="text-align: center">
+    <button class="btn btn-danger btn-lg"
+            type="submit"
+            [disabled]="onClear()"
+            (click)="onCreateNote()">Add Note
+    </button>
+    <br><br>
+    <p style="font-size:20px;" *ngIf="noteCreated; else notAdd">{{ noteCreationStatus }}</p>
+    <ng-template #notAdd>
+      <p></p>
+    </ng-template>
+  </div>
+</div>
