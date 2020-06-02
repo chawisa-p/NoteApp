@@ -25,12 +25,24 @@ export class HomeComponent implements OnInit {
         const data = JSON.parse(JSON.stringify(loadNote));
         const i = data.length;
         let j = i - 5;
-        while (j < i) {
-          this.loadNoteTop5.push({
-            key : j + 1,
-            value: loadNote[j]
-          });
-          j++;
+        if (i >= 5){
+          while (j < i) {
+            this.loadNoteTop5.push({
+              key : j + 1,
+              value: loadNote[j]
+            });
+            j++;
+          }
+        }
+        else{
+          let k = 0;
+          while (k < i) {
+            this.loadNoteTop5.push({
+              key : k + 1,
+              value: loadNote[k]
+            });
+            k++;
+          }
         }
       }
     });

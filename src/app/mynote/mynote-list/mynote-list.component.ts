@@ -25,5 +25,4 @@ export class MynoteListComponent implements OnInit {
       this.toDoText = 'PENDING';
     }
   }
-
 }

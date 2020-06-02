@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DataStorageService} from '../shared/data-storage.service';
+import { DataStorageService } from '../shared/data-storage.service';
 
 @Component({
   selector: 'app-mynote',
@@ -19,7 +19,7 @@ export class MynoteComponent implements OnInit {
   }
 
   OnAdd(textNote: string) {
-    if(this.data.length === 0){
+    if (this.data.length === 0){
       this.data.push({note: textNote});
       this.AllNote = this.data;
     }
@@ -29,11 +29,11 @@ export class MynoteComponent implements OnInit {
   }
 
   onFetchNote() {
-    this.dataStorageService.fetchNote().subscribe(loadNote => {
-      if (loadNote != null && loadNote !== undefined){
-        this.AllNote = loadNote;
-      }
-    });
+      this.dataStorageService.fetchNote().subscribe(loadNote => {
+        if (loadNote != null && loadNote !== undefined) {
+          this.AllNote = loadNote;
+        }
+      });
   }
 
 }
